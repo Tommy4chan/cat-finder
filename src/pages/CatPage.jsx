@@ -13,7 +13,7 @@ const CatPage = () => {
   }, []);
 
   const getCat = async () => {
-    const res = await fetch(`/api/images/${catId}`, {
+    const res = await fetch(`${import.meta.env.VITE_API_URL}/images/${catId}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',

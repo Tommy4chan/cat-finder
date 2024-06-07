@@ -8,13 +8,13 @@ const Pagination = ({ currentPage, maxPages, setCurrentPage }) => {
   useEffect(() => {
     let newPaginationLinks = [];
 
-    newPaginationLinks.push(<li className={0 === currentPage ? 'page-item disabled' : 'page-item'}><button className="page-link" onClick={prevButtonProccess}>Previous</button></li>);
+    newPaginationLinks.push(<li className={0 === currentPage ? 'page-item disabled' : 'page-item'} key={-1}><button className="page-link" onClick={prevButtonProccess}>Previous</button></li>);
 
     for (let page = 0; page < maxPages; page++) {
-      newPaginationLinks.push(<li className={page === currentPage ? 'page-item active' : 'page-item'}><button className="page-link" onClick={() => setCurrentPage(page)}>{page + 1}</button></li>);
+      newPaginationLinks.push(<li className={page === currentPage ? 'page-item active' : 'page-item'} key={page}><button className="page-link" onClick={() => setCurrentPage(page)}>{page + 1}</button></li>);
     }
 
-    newPaginationLinks.push(<li className={maxPages - 1 === currentPage ? 'page-item disabled' : 'page-item'}><button className="page-link" onClick={nextButtonProccess}>Next</button></li>);
+    newPaginationLinks.push(<li className={maxPages - 1 === currentPage ? 'page-item disabled' : 'page-item'} key={maxPages}><button className="page-link" onClick={nextButtonProccess}>Next</button></li>);
     setPagiantionLinks(newPaginationLinks);
   }, [maxPages, currentPage]);
 

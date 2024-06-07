@@ -13,11 +13,11 @@ const RandomCatPage = () => {
 
   const getRandomCat = async () => {
     setCat(null);
-    const res = await fetch('/api/images/search?format=json&has_breeds=true', {
+    const res = await fetch(`${import.meta.env.VITE_API_URL}/images/search?format=json&has_breeds=true`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
-        'x-api-key': 'live_dqAoVZ0P5ONROkDu20DEr2vyHUwPJ8Ew3nY2zkbshBUSSHkRfNfUZNhVttrBf7Ce',
+        'x-api-key': import.meta.env.VITE_API_KEY,
       },
     });
 

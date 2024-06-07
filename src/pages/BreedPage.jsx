@@ -19,11 +19,11 @@ const BreedPage = () => {
   useEffect(() => {
     const getCatsByBreed = async () => {
       setCats(null);
-      const res = await fetch(`/api/images/search?format=json&limit=9&page=${currentPage}&order=ASC&include_breeds=0&breed_ids=${breedId}`, {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/images/search?format=json&limit=9&page=${currentPage}&order=ASC&include_breeds=0&breed_ids=${breedId}`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
-          'x-api-key': 'live_dqAoVZ0P5ONROkDu20DEr2vyHUwPJ8Ew3nY2zkbshBUSSHkRfNfUZNhVttrBf7Ce',
+          'x-api-key': import.meta.env.VITE_API_KEY,
         },
       });
 
