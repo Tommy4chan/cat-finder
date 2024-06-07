@@ -18,7 +18,7 @@ const Navbar = () => {
               <NavLink className="nav-link" to="/">Home</NavLink>
             </li>
             <li className="nav-item">
-              <NavLink reloadDocument className="nav-link" to="/random">Random Cat</NavLink>
+              <NavLink className="nav-link" to="/random">Random Cat</NavLink>
             </li>
           </ul>
         </div>
